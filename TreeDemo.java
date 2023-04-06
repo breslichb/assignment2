@@ -89,7 +89,7 @@ class BinarySearchTree{
       if(root.left != null){
          retval = find(root.left, key);
       }
-      if(root == key){
+      if(root.value == key){
          return true;
       }
       if(root.right != null && retval != true){
@@ -105,7 +105,10 @@ class BinarySearchTree{
    with a smallest key
    */
    public int getMin(Node root){
-      //implement me
+      while(root.left != null){
+         root = root.left;
+      }
+      return root.value;
    }
   
   
