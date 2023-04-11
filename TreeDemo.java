@@ -33,6 +33,40 @@ class BinarySearchTree{
       return root;
    }
    
+   /*
+   Iterative Insert method
+   */
+   public void insert(int value){
+      //tree is empty
+      if(root == null){
+         root = new Node(value);
+         return;
+      }else{
+         Node current = root;
+         Node parent = null;
+         
+         while(true){
+            parent = current;
+            
+            if(value < current.value){
+               current = current.left;
+               if(current == null){
+                  parent.left = new Node(value);
+                  return;
+               }
+            }else{
+               current = current.right;
+               if(current == null){
+                  parent.right = new Node(value);
+                  return;
+               }
+            }
+           
+         }//closing while
+      
+      }//closing main if-else 
+   }
+   
    
    /*
    pre-order traversal
@@ -159,7 +193,7 @@ class BinarySearchTree{
 public class TreeDemo{
    public static void main(String[] args){
       BinarySearchTree t1 = new BinarySearchTree();
-      t1.insert(24);
+      t1.insert(t1.root, 24);
       t1.insert(80);
       t1.insert(18);
       t1.insert(9);
