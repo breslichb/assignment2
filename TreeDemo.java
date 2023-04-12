@@ -15,8 +15,10 @@ class BinarySearchTree{
    Node root;
    
    
-   /*
-   recursive insert method
+   /**
+   * A recursive insert method
+   * @param root The root of the target tree
+   * @param value The value to be inserted
    */
    public Node insert(Node root, int value){
    //base case
@@ -33,8 +35,9 @@ class BinarySearchTree{
       return root;
    }
    
-   /*
-   Iterative Insert method
+   /**
+   * Iterative Insert method
+   * @param value The value to be inserted
    */
    public void insert(int value){
       //tree is empty
@@ -68,8 +71,9 @@ class BinarySearchTree{
    }
    
    
-   /*
-   pre-order traversal
+   /**
+   * A pre-order traversal method.
+   * @param root The root of the target tree.
    */
    public void preOrderTraversal(Node root){
       System.out.println(root.value);
@@ -81,8 +85,9 @@ class BinarySearchTree{
       }
    }
 
-   /*
-   in-order traversal
+   /**
+   * An in-order traversal method.
+   * @param root The root of the target tree.
    */
    public void inOrderTraversal(Node root){
       if(root.left != null){
@@ -96,8 +101,9 @@ class BinarySearchTree{
    
    
    
-   /*
-   post-order traversal
+   /**
+   * A post-order traversal method.
+   * @param root The root of the target tree.
    */
    public void postOrderTraversal(Node root){
       if(root.left != null){
@@ -111,9 +117,11 @@ class BinarySearchTree{
    
    
    
-   /*
-   a method to find the node in the tree
-   with a specific value
+   /**
+   * A method to find the node in the tree with a specific value.
+   * @param root The root of the target tree.
+   * @param key The key we're searching for.
+   * @return True if the key is found, False otherwise.
    */
    public boolean find(Node root, int key){
       boolean retval = false;
@@ -131,9 +139,10 @@ class BinarySearchTree{
    
    
    
-   /*
-   a method to find the node in the tree
-   with a smallest key
+   /**
+   * A method to find the node in the tree with the smallest key.
+   * @param root The root of the target tree.
+   * @return The smallest value in the tree.
    */
    public int getMin(Node root){
       while(root.left != null){
@@ -144,9 +153,10 @@ class BinarySearchTree{
   
   
   
-   /*
-   a method to find the node in the tree
-   with a largest key
+   /**
+   * A method to find the node in the tree with the largest key
+   * @param root The root of the target tree.
+   * @return The largest value in the tree.
    */
    public int getMax(Node root){
       while(root.right != null){
@@ -157,9 +167,11 @@ class BinarySearchTree{
    
    
    
-   /*
-   this method will not compile until getMax
-   is implemented
+   /**
+    * Deletes a target node in the tree.
+    * @param root The root of the target tree.
+    * @param key The key of the target node.
+    * @return The new node at the old node's position (or null if the node had no children).
    */
    public Node delete(Node root, int key){
       
